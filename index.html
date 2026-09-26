@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ACHO PR · Nueva era del staff</title>
+<meta name="description" content="Tu equipo. Tu comunidad. El nuevo espacio del staff de Latin York RP.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;1,700;1,800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --line:rgba(255,255,255,.10);
+    --green:#3ee27e;
+    --text:#f4f4f2;
+    --dim:rgba(244,244,242,.5);
+    --faint:rgba(244,244,242,.28);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{background:var(--bg); scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Space Grotesk', system-ui, sans-serif;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  .disp{font-family:'Archivo', system-ui, sans-serif; font-style:italic; font-weight:800; letter-spacing:-.01em;}
+
+  header{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    padding:22px clamp(20px,5vw,48px);
+    padding-top:calc(22px + env(safe-area-inset-top,0px));
+    border-bottom:1px solid var(--line);
+  }
+  .brand-left{display:flex; align-items:center; gap:14px;}
+  .brand-left .name{
+    font-family:'Archivo', sans-serif; font-style:italic; font-weight:800;
+    color:var(--green); font-size:1rem; letter-spacing:.01em;
+  }
+  .brand-left .sep{width:1px; height:26px; background:var(--line);}
+  .brand-left .sub{font-size:.62rem; line-height:1.5; color:var(--dim); letter-spacing:.06em;}
+  .brand-right{text-align:right; display:flex; gap:22px; align-items:flex-start;}
+  .brand-right .eq{font-size:.66rem; color:var(--dim); letter-spacing:.03em;}
+  .brand-right .clock{font-size:.66rem; color:var(--faint); font-variant-numeric:tabular-nums;}
+
+  main{max-width:1180px; margin:0 auto; padding:0 clamp(20px,5vw,48px);}
+
+  .hero{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:64px;
+    padding:clamp(50px,8vw,84px) 0 clamp(60px,8vw,90px);
+  }
+  .label{
+    font-size:.68rem; color:var(--faint); letter-spacing:.08em;
+    display:flex; align-items:center; gap:8px; margin-bottom:18px;
+  }
+  .label .rule{width:20px; height:1px; background:var(--faint);}
+
+  h1.headline{font-size:clamp(2.6rem,6.2vw,4.2rem); line-height:.98; color:var(--text);}
+  h1.headline .accent{display:block; color:var(--green); margin-top:2px;}
+
+  .copy{
+    margin-top:20px; max-width:42ch; font-size:.88rem; line-height:1.7; color:var(--dim);
+  }
+
+  .cta{
+    margin-top:26px; display:inline-flex; align-items:center;
+    background:var(--green); color:#06210f;
+    font-weight:600; font-size:.9rem; font-family:inherit;
+    padding:14px 26px; border-radius:8px; border:none; cursor:pointer;
+    text-decoration:none;
+    transition:filter .15s ease, transform .15s ease;
+  }
+  .cta:hover{filter:brightness(1.08); transform:translateY(-1px);}
+  .cta:focus-visible{outline:2px solid var(--green); outline-offset:3px;}
+  .cta:disabled{opacity:.6; cursor:default; transform:none;}
+  .oauth-error{margin-top:14px; font-size:.72rem; color:#ff8a8a;}
+
+  .sub-links{margin-top:16px; display:flex; flex-direction:column; gap:6px;}
+  .sub-links a{
+    font-size:.72rem; color:var(--dim); text-decoration:underline;
+    text-underline-offset:3px; text-decoration-color:var(--line);
+  }
+  .sub-links span{font-size:.72rem; color:var(--faint);}
+
+  .side h2.headline{font-size:clamp(1.7rem,3.4vw,2.3rem); line-height:1.05; margin-bottom:26px;}
+
+  .bars{
+    display:flex; align-items:flex-end; gap:10px;
+    height:150px; margin-bottom:22px;
+  }
+  .bars i{
+    flex:1; border-radius:4px 4px 0 0;
+    background:linear-gradient(180deg, #1e5b39 0%, #3ee27e 100%);
+    display:block;
+  }
+
+  .side .meta{font-size:.68rem; color:var(--faint); letter-spacing:.06em; margin-bottom:20px;}
+  .side .divider{height:1px; background:var(--line); margin-bottom:16px;}
+  .side .presence{font-size:.78rem; color:var(--text); font-weight:500;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:24px clamp(20px,5vw,48px);
+    padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    font-size:.68rem; color:var(--faint);
+  }
+  footer .right{color:var(--dim);}
+  footer .right b{color:var(--text); font-weight:500;}
+
+  @media (max-width:800px){
+    header{flex-direction:column; gap:14px;}
+    .brand-right{text-align:left;}
+    .hero{grid-template-columns:1fr; gap:44px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-left">
+    <span class="name">EQUIPO ADMINISTRATIVO</span>
+    <span class="sep"></span>
+    <span class="sub">NUEVA ERA<br>STAFF PORTAL</span>
+  </div>
+  <div class="brand-right">
+    <span class="eq">▾ UN MISMO EQUIPO</span>
+    <span class="clock" id="clock">00:00</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="label"><span class="rule"></span>02 / SEÑAL</div>
+      <h1 class="headline disp">Latin York<span class="accent">Nueva era staff.</span></h1>
+      <p class="copy">Tu presencia marca la diferencia. Aquí empieza tu próximo turno. Al autorizar Discord compartes tu perfil y correo, si lo autorizas y está disponible, para revisión del staff. Se conservan hasta 180 días desde el último inicio de sesión autorizado. Para solicitar la eliminación de tu registro, abre un ticket de soporte. Solo los responsables autorizados pueden borrarlo. Privacidad.</p>
+      <button class="cta" id="discord-login" type="button">Continuar con Discord</button>
+      <p class="oauth-error" id="oauth-error" hidden>No se pudo completar la autorización. Inténtalo de nuevo.</p>
+      <div class="sub-links">
+        <a href="#">Jugadores: reglas y registro DxDiag ↗</a>
+        <span>Acceso exclusivo para el staff autorizado.</span>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="label" style="margin-bottom:8px;">AP / STAFF DIVISION</div>
+      <h2 class="headline disp">Haz que<br>cuente.</h2>
+      <div class="bars" aria-hidden="true">
+        <i style="height:38%"></i>
+        <i style="height:52%"></i>
+        <i style="height:46%"></i>
+        <i style="height:70%"></i>
+        <i style="height:62%"></i>
+        <i style="height:88%"></i>
+        <i style="height:74%"></i>
+        <i style="height:96%"></i>
+        <i style="height:82%"></i>
+      </div>
+      <div class="meta">COMUNIDAD · EQUIPO · COMPROMISO</div>
+      <div class="divider"></div>
+      <div class="presence">PRESENCIA ↗</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>‹ Una comunidad. Un equipo. Una nueva era.</span>
+  <span class="right"><b>IDENTIDAD VERIFICADA CON DISCORD</b> &nbsp; ACH / PR — 001</span>
+</footer>
+
+<script>
+  function tick(){
+    var d = new Date();
+    var h = String(d.getHours()).padStart(2,'0');
+    var m = String(d.getMinutes()).padStart(2,'0');
+    document.getElementById('clock').textContent = h + ':' + m;
+  }
+  tick();
+  setInterval(tick, 1000 * 30);
+
+  /* ---- Login real con Discord OAuth2 ---- */
+  // TODO: reemplaza estos dos valores con los tuyos.
+  // DISCORD_CLIENT_ID es público (aparece en el Developer Portal, pestaña OAuth2).
+  // REDIRECT_URI debe ser EXACTAMENTE igual (carácter por carácter) a la que
+  // registraste en el Developer Portal y a DISCORD_REDIRECT_URI en Vercel.
+  var DISCORD_CLIENT_ID = '1553089911639380088';
+  var REDIRECT_URI = 'https://tu-dominio.vercel.app/api/callback';
+
+  function randomState(){
+    if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+    return String(Date.now()) + '-' + Math.random().toString(36).slice(2);
+  }
+
+  var loginBtn = document.getElementById('discord-login');
+  if (loginBtn) {
+    loginBtn.addEventListener('click', function () {
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Conectando…';
+
+      var state = randomState();
+      // Cookie de corta duración solo para verificar que el callback
+      // corresponde a este mismo intento de login (protección CSRF).
+      document.cookie = 'oauth_state=' + state + '; path=/; max-age=300; samesite=lax';
+
+      var params = new URLSearchParams({
+        client_id: DISCORD_CLIENT_ID,
+        redirect_uri: REDIRECT_URI,
+        response_type: 'code',
+        scope: 'identify email',
+        state: state,
+        prompt: 'consent'
+      });
+
+      window.location.href = 'https://discord.com/api/oauth2/authorize?' + params.toString();
+    });
+  }
+
+  // Si el backend nos devuelve aquí con ?error=..., mostramos el aviso.
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('error')) {
+    var errBox = document.getElementById('oauth-error');
+    if (errBox) errBox.hidden = false;
+  }
+</script>
+
+</body>
+</html>
